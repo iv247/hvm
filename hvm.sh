@@ -48,7 +48,7 @@ hvm_get_haxelib_versions() {
 }
 
 hvm_get_neko_versions() {
-	NEKO_VERSIONS=("1.8.1" "1.8.2" "2.0.0", "2.1.0")
+	NEKO_VERSIONS=("1.8.1" "1.8.2" "2.0.0" "2.1.0")
 }
 
 hvm_valid_version() {
