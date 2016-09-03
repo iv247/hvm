@@ -109,12 +109,12 @@ hvm() {
 		esac
 	;;
 	"install" )
-		sudo ln -sf $HVM/haxe.sh $PREFIX/haxe
-		sudo ln -sf $HVM/haxelib.sh $PREFIX/haxelib
-		sudo ln -sf $HVM/neko.sh $PREFIX/neko
-		sudo ln -sf $HVM/nekotools.sh $PREFIX/nekotools
-		sudo ln -sf $HVM/nekoc.sh $PREFIX/nekoc
-		sudo ln -sf $HVM/nekoml.sh $PREFIX/nekoml
+		ln -sf $HVM/haxe.sh $PREFIX/haxe
+		ln -sf $HVM/haxelib.sh $PREFIX/haxelib
+		ln -sf $HVM/neko.sh $PREFIX/neko
+		ln -sf $HVM/nekotools.sh $PREFIX/nekotools
+		ln -sf $HVM/nekoc.sh $PREFIX/nekoc
+		ln -sf $HVM/nekoml.sh $PREFIX/nekoml
 		source $HVM/config.sh
 	;;
 	"versions" )
