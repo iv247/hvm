@@ -65,6 +65,7 @@ hvm_save_current() {
 	rm -f $HVM/current.sh
 	echo "export NEKO=$NEKO" >> $HVM/current.sh
 	echo "export HAXE=$HAXE" >> $HVM/current.sh
+	echo "export HAXELIB=$HAXELIB" >> $HVM/current.sh
 }
 
 hvm() {

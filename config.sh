@@ -89,37 +89,3 @@ if [ ! -d "$NEKOPATH" ]; then
 	fi
 	rm "$ARCHIVE"
 fi
-
-# install haxelib if needed
-# if [ ! -d "$HAXELIBPATH" ]; then
-# 	mkdir -p "$HVM/versions/haxelib"
-
-# 	VERSION=$( echo "$HAXELIB" | tr "." "," )
-# 	URL="http://lib.haxe.org/files/3.0/haxelib_client-$VERSION.zip"
-# 	ARCHIVE="$HAXELIBPATH.zip"
-
-# 	if [ "$HAXELIB" == "dev" ]; then
-# 		URL="https://github.com/HaxeFoundation/haxelib/archive/master.zip"
-# 	fi
-
-# 	echo "downloading $URL"
-# 	curl "$URL" -o "$ARCHIVE" -# -L
-
-# 	unzip -qq "$ARCHIVE" -d "$HAXELIBPATH"
-# 	rm "$ARCHIVE"
-
-# 	if [ -d $HAXELIBPATH/package ]; then
-# 		mv $HAXELIBPATH/package/* $HAXELIBPATH
-# 		rmdir $HAXELIBPATH/package
-# 	fi
-
-# 	if [ -d $HAXELIBPATH/haxelib-master/src ]; then
-# 		mv $HAXELIBPATH/haxelib-master/src/* $HAXELIBPATH
-# 		rm -rf $HAXELIBPATH/haxelib-master
-# 	fi
-
-# 	if [ -d $HAXELIBPATH/src ]; then
-# 		mv $HAXELIBPATH/src/* $HAXELIBPATH
-# 		rm -rf $HAXELIBPATH/src
-# 	fi
-# fi
