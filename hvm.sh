@@ -31,22 +31,6 @@ hvm_get_haxe_versions() {
 	done
 }
 
-# hvm_get_haxelib_versions() {
-# 	local VERSIONS=()
-# 	local REGEX=">([0-9\.rc\-]*)<"
-# 	# https://www.youtube.com/watch?v=w3PoTnkLfxE
-# 	local HREFS=$( curl --silent http://lib.haxe.org/p/haxelib_client/versions/ 2>&1 | grep "/\" class=\"text" )
-# 	for HREF in $HREFS; do
-# 		if [[ $HREF =~ $REGEX ]]; then
-# 			VERSIONS+=("${BASH_REMATCH[1]}")
-# 		fi
-# 	done
-# 	HAXELIB_VERSIONS=()
-# 	for (( idx=${#VERSIONS[@]}-1 ; idx>=0 ; idx-- )) ; do
-# 		HAXELIB_VERSIONS+=("${VERSIONS[idx]}")
-# 	done
-# }
-
 hvm_get_neko_versions() {
 	NEKO_VERSIONS=("1.8.1" "1.8.2" "2.0.0" "2.1.0")
 }
@@ -65,7 +49,6 @@ hvm_save_current() {
 	rm -f $HVM/current.sh
 	echo "export NEKO=$NEKO" >> $HVM/current.sh
 	echo "export HAXE=$HAXE" >> $HVM/current.sh
-	echo "export HAXELIB=$HAXELIB" >> $HVM/current.sh
 }
 
 hvm() {
@@ -100,7 +83,7 @@ hvm() {
 	;;
 	"install" )
 		ln -sf $HVM/haxe.sh $PREFIX/haxe
-		ln -sf $HVM/haxelib.sh $PREFIX/haxe
+		ln -sf $HVM/haxelib.sh $PREFIX/haxelib
 		ln -sf $HVM/neko.sh $PREFIX/neko
 		ln -sf $HVM/nekotools.sh $PREFIX/nekotools
 		ln -sf $HVM/nekoc.sh $PREFIX/nekoc
