@@ -1,13 +1,20 @@
+# Differences from original HVM:
+
+* Haxelib version management is removed, this repo uses the Haxelib packaged with the Haxe installaiton
+* Neko 2.1.0 has been added
+* Running hvm does not require sudo (just removing your non-hvm install)
+* Paths in this readme were updated to include /usr/local/.., though depending on your system this may not apply
+
 # Installation:
 
 If you have an existing Haxe install, you will need to nuke it from orbit:
 
 ```shell
-sudo rm -rf /usr/lib/haxe
-sudo rm -rf /usr/lib/neko
-sudo rm /usr/lib/libneko.dylib
-sudo rm /usr/bin/haxe*
-sudo rm /usr/bin/neko*
+sudo rm -rf /usr/local/lib/haxe
+sudo rm -rf /usr/loca/lib/neko
+sudo rm /usr/local/lib/libneko.dylib
+sudo rm /usr/local/bin/haxe*
+sudo rm /usr/local/bin/neko*
 ```
 
 And then:
