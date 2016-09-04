@@ -76,7 +76,7 @@ hvm() {
 			source $HVM/config.sh
 		;;
 		* )
-			echo "binary \"$2\" was not one of (neko haxe haxelib)"
+			echo "binary \"$2\" was not one of (neko haxe)"
 			return
 		;;
 		esac
@@ -98,12 +98,6 @@ hvm() {
 				echo "$VERSION"
 			done
 		;;
-		"haxelib" )
-			hvm_get_haxelib_versions
-			for VERSION in "${HAXELIB_VERSIONS[@]}"; do
-				echo "$VERSION"
-			done
-		;;
 		"neko" )
 			hvm_get_neko_versions
 			for VERSION in "${NEKO_VERSIONS[@]}"; do
@@ -111,7 +105,7 @@ hvm() {
 			done
 		;;
 		* )
-			echo "binary \"$2\" was not one of (neko haxe haxelib)"
+			echo "binary \"$2\" was not one of (neko haxe)"
 			return
 		;;
 		esac
@@ -119,7 +113,6 @@ hvm() {
 	"help" | * )
 		echo "Haxe Version Manager $VERSION"
 		echo "Usage: hvm use (neko|haxe|haxelib) (latest|dev|1.2.3)"
-		echo "Usage: hvm versions (neko|haxe|haxelib)"
 	;;
 	esac
 }
