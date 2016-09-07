@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PREFIX=/usr/local/bin
+PATH_PREFIX=/usr/local/bin
 VERSION=1.1.0
 
 export HVM=~/.hvm
@@ -82,12 +82,12 @@ hvm() {
 		esac
 	;;
 	"install" )
-		ln -sf $HVM/haxe.sh $PREFIX/haxe
-		ln -sf $HVM/haxelib.sh $PREFIX/haxelib
-		ln -sf $HVM/neko.sh $PREFIX/neko
-		ln -sf $HVM/nekotools.sh $PREFIX/nekotools
-		ln -sf $HVM/nekoc.sh $PREFIX/nekoc
-		ln -sf $HVM/nekoml.sh $PREFIX/nekoml
+		ln -sf $HVM/haxe.sh $PATH_PREFIX/haxe
+		ln -sf $HVM/haxelib.sh $PATH_PREFIX/haxelib
+		ln -sf $HVM/neko.sh $PATH_PREFIX/neko
+		ln -sf $HVM/nekotools.sh $PATH_PREFIX/nekotools
+		ln -sf $HVM/nekoc.sh $PATH_PREFIX/nekoc
+		ln -sf $HVM/nekoml.sh $PATH_PREFIX/nekoml
 		source $HVM/config.sh
 	;;
 	"versions" )
