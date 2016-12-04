@@ -1,9 +1,11 @@
 #!/bin/bash
 
-PATH_PREFIX=/usr/local/bin
 VERSION=1.1.0
 
 export HVM=~/.hvm
+export PATH=$PATH:$HVM/bin
+
+PATH_PREFIX=$HVM/bin
 
 # determine platform
 source $HVM/platform.sh
@@ -82,6 +84,7 @@ hvm() {
 		esac
 	;;
 	"install" )
+	    rm -rf $HVM/bin && mkdir $HVM/bin
 		ln -sf $HVM/haxe.sh $PATH_PREFIX/haxe
 		ln -sf $HVM/haxelib.sh $PATH_PREFIX/haxelib
 		ln -sf $HVM/neko.sh $PATH_PREFIX/neko
