@@ -84,7 +84,7 @@ hvm() {
 		esac
 	;;
 	"install" )
-	    rm -rf $HVM/bin && mkdir $HVM/bin
+	    mkdir -p $HVM/bin
 		ln -sf $HVM/haxe.sh $PATH_PREFIX/haxe
 		ln -sf $HVM/haxelib.sh $PATH_PREFIX/haxelib
 		ln -sf $HVM/neko.sh $PATH_PREFIX/neko
