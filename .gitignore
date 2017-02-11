@@ -1,2 +1,4 @@
 /versions
 /current.sh
+bin/
+.idea/
