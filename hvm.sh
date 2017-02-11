@@ -27,7 +27,7 @@ fi
 
 hvm_get_haxe_versions() {
 	HAXE_VERSIONS=()
-	local VERSIONS=`curl --silent http://haxe.org/download/list 2>&1 | grep -oE 'version\/[^/]+' | cut -d / -f 2 | awk '!a[$0]++'`
+	local VERSIONS=`curl --silent http://haxe.org/download/list/ 2>&1 | grep -oE 'version\/[^/]+' | cut -d / -f 2 | awk '!a[$0]++'`
 	for VERSION in $VERSIONS; do
 		HAXE_VERSIONS+=($VERSION)
 	done
