@@ -32,12 +32,11 @@ if [ ! -d "$HAXEPATH" ]; then
 	mkdir -p "$HVM/versions/haxe"
 
 	ARCHIVE="$HAXEPATH.tar.gz"
-	DOWNLOADS="http://haxe.org/website-content/downloads"
-
+	DOWNLOADS="https://github.com/HaxeFoundation/haxe/releases/download"
 	case $PLATFORM in
-		'OSX') URL="$DOWNLOADS/$HAXE/downloads/haxe-$HAXE-osx.tar.gz" ;;
-		'LINUX32') URL="$DOWNLOADS/$HAXE/downloads/haxe-$HAXE-linux32.tar.gz" ;;
-		'LINUX64') URL="$DOWNLOADS/$HAXE/downloads/haxe-$HAXE-linux64.tar.gz" ;;
+		'OSX') URL="$DOWNLOADS/$HAXE/haxe-$HAXE-osx.tar.gz" ;;
+		'LINUX32') URL="$DOWNLOADS/$HAXE/haxe-$HAXE-linux32.tar.gz" ;;
+		'LINUX64') URL="$DOWNLOADS/$HAXE/haxe-$HAXE-linux64.tar.gz" ;;
 	esac
 
 
@@ -51,7 +50,7 @@ if [ ! -d "$HAXEPATH" ]; then
 	fi
 
 	echo "downloading $URL"
-	curl "$URL" -o "$ARCHIVE" -#
+	curl -L "$URL" -o "$ARCHIVE" -#
 	mkdir -p "$HAXEPATH"
 
 	tar -xzf "$ARCHIVE" -C "$HAXEPATH" --strip-components=1
