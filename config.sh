@@ -39,14 +39,12 @@ if [ ! -d "$HAXEPATH" ]; then
 		'LINUX64') URL="$DOWNLOADS/$HAXE/haxe-$HAXE-linux64.tar.gz" ;;
 	esac
 
-
 	if [ "$HAXE" == "dev" ]; then
 		case $PLATFORM in
 			'OSX') URL="http://hxbuilds.s3-website-us-east-1.amazonaws.com/builds/haxe/mac/haxe_latest.tar.gz" ;;
 			'LINUX32') URL="http://hxbuilds.s3-website-us-east-1.amazonaws.com/builds/haxe/linux32/haxe_latest.tar.gz" ;;
 			'LINUX64') URL="http://hxbuilds.s3-website-us-east-1.amazonaws.com/builds/haxe/linux64/haxe_latest.tar.gz" ;;
 		esac
-
 	fi
 
 	echo "downloading $URL"

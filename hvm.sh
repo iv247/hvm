@@ -1,40 +1,24 @@
 #!/bin/bash
 
-VERSION=1.1.1
+VERSION=2.0.0
 
 export HVM=~/.hvm
 export PATH=$PATH:$HVM/bin
 
 PATH_PREFIX=$HVM/bin
 
-# determine platform
-source $HVM/platform.sh
-
-# TODO (dpeek): can we just source config for the following three directives?
-
-# source default versions
-source $HVM/versions.sh
-
-# source current versions if they exist
-if [ -e $HVM/current.sh ]; then
-	source $HVM/current.sh
-fi
-
-# source local versions if they exist
-if [ -e .hvmrc ]; then
-	source .hvmrc
-fi
+source $HVM/config.sh
 
 hvm_get_haxe_versions() {
 	HAXE_VERSIONS=()
-	local VERSIONS=`curl --silent http://haxe.org/download/list/ 2>&1 | grep -oE 'version\/[^/]+' | cut -d / -f 2 | awk '!a[$0]++'`
+	local VERSIONS=`curl --silent https://haxe.org/download/list/ 2>&1 | grep -oE 'version\/[^/]+' | cut -d / -f 2 | awk '!a[$0]++'`
 	for VERSION in $VERSIONS; do
 		HAXE_VERSIONS+=($VERSION)
 	done
 }
 
 hvm_get_neko_versions() {
-	NEKO_VERSIONS=("1.8.1" "1.8.2" "2.0.0" "2.1.0")
+	NEKO_VERSIONS=("1.8.1" "1.8.2" "2.0.0" "2.1.0" "2.2.0")
 }
 
 hvm_valid_version() {
@@ -115,7 +99,7 @@ hvm() {
 	;;
 	"help" | * )
 		echo "Haxe Version Manager $VERSION"
-		echo "Usage: hvm use (neko|haxe|haxelib) (latest|dev|1.2.3)"
+		echo "Usage: hvm use (neko|haxe) (latest|dev|1.2.3)"
 	;;
 	esac
 }

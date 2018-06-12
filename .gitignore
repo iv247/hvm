@@ -1,4 +1,5 @@
 /versions
 /current.sh
 bin/
+!bin/versions/haxe/current_project
 .idea/

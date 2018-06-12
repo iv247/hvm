@@ -1,2 +1,2 @@
-HAXE=dev
-NEKO=2.1.0
+HAXE=3.4.7
+NEKO=2.2.0
