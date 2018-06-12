@@ -20,7 +20,7 @@ sudo rm /usr/local/bin/neko*
 And then:
 
 ```shell
-git clone https://github.com/dpeek/hvm.git ~/.hvm
+git clone https://github.com/iv247/hvm.git ~/.hvm
 echo "source ~/.hvm/hvm.sh" >> ~/.profile
 source ~/.profile
 hvm install
