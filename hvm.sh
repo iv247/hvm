@@ -69,6 +69,8 @@ hvm() {
 	;;
 	"install" )
 	    mkdir -p $HVM/bin
+		mkdir -p $HVM/versions/haxe/current_project
+
 		ln -sf $HVM/haxe.sh $PATH_PREFIX/haxe
 		ln -sf $HVM/haxelib.sh $PATH_PREFIX/haxelib
 		ln -sf $HVM/neko.sh $PATH_PREFIX/neko

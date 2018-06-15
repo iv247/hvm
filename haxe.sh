@@ -1,5 +1,5 @@
 #!/bin/bash
-source ~/.hvm/config.sh
-mkdir -p ~/.hvm/versions/haxe/current_project
-ln -sfn $HAXEPATH/std ~/.hvm/versions/haxe/current_project/std
+BASEDIR=$(dirname "$0")
+source $BASEDIR/../config.sh
+ln -sfn $HAXEPATH/std $HVM/versions/haxe/current_project/std
 exec $HAXEPATH/haxe "$@"
