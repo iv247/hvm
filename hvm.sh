@@ -2,7 +2,7 @@
 
 VERSION=2.0.0
 
-export HVM=$(dirname "$0")
+export HVM="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 export PATH=$PATH:$HVM/bin
 
 PATH_PREFIX=$HVM/bin
