@@ -2,7 +2,7 @@
 
 VERSION=2.0.0
 
-export HVM=~/.hvm
+export HVM=$(dirname "$0")
 export PATH=$PATH:$HVM/bin
 
 PATH_PREFIX=$HVM/bin

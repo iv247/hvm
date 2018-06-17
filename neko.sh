@@ -1,3 +1,4 @@
 #!/bin/bash
-source ~/.hvm/config.sh
+BASEDIR=$(dirname "$0")
+source $BASEDIR/../config.sh
 exec $NEKOPATH/neko "$@"
